@@ -10,6 +10,10 @@ root.render(
   <React.StrictMode>
     <PrivyProvider
       appId={process.env.REACT_APP_PRIVY_APP_ID}
+      config={{
+        // Configures email, wallet, Google, Apple, and Farcaster login
+        loginMethods: ['telegram'],
+      }}
       onSuccess={(user) => console.log(`User ${user.id} logged in!`)}
     >
       <App />
